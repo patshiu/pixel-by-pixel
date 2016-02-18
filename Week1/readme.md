@@ -15,7 +15,7 @@ It felt even longer and more arduous than I had imagined.
 
 First I wrote out the ASCII characters by hand 5 times, scanned them, then ran them through `HandwritingDarkness.pde` to analyze my handwriting.  
 
-![Handwriting out ASCII characters](https://github.com/patshiu/pixel-by-pixel/blob/master/Week1/Final_Output/IMG_8153.jpg?raw=true)  
+![Handwriting out ASCII characters](https://github.com/patshiu/pixel-by-pixel/blob/master/Week1/_resources/IMG_8390.JPG?raw=true)  
 
 I then selected 70 characters out of the full charset of 95 based on their darkness and processed the Poomoji image with `AsciiConverter.pde` to convert the image into [ASCII art](https://github.com/patshiu/pixel-by-pixel/blob/master/Week1/AsciiConverter/poop_square_ratio.txt).  
 
