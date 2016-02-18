@@ -10,7 +10,7 @@ For this assignment, I prioritized the following specs:
 - modularized "super pixel" approach
 
 Here is a gif of the result:  
-![Gif of sketch](http://i.imgur.com/1sa9VkS.gif)  
+![Gif of sketch](https://github.com/patshiu/pixel-by-pixel/blob/master/Week3/Textural_Studies/TextureStudy02/_exports/TextureStudy02-pixel_manip_600x600.gif?raw=true)  
 
 Each "super pixel" is rendered as a `PGraphic`.  
 ![Gif of single pixel](http://i.imgur.com/P8oiS8m.gif)  
