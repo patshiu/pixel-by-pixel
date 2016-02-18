@@ -9,19 +9,22 @@ PVector ghostMouse;
 
 //GIF EXPORT UTIL
 //-----------------------
-// import gifAnimation.*;
-// GifMaker gifExport;
-// boolean record = false;
-// int frameStart;
-// float ghostMouseStart;
+import gifAnimation.*;
+GifMaker gifExport;
+boolean record = false;
+int frameStart;
+float ghostMouseStart;
 
 void setup() {
-  size(600,600);
+  size(400,400);
   mouselessMode = false;
   ghostMouse = new PVector(-width*2.0 , -height*2.0);
   pts = new ArrayList<PtMod>();
   float gUnit = 50;
   int rowNum = 0;
+  //Display just 1 single pixel
+    // PtMod pm = new PtMod(width/2, height/2);
+    // pts.add(pm);
   for(int row = 0; row <= width; row += gUnit){
     for(int col = 0; col <= width; col += gUnit){
       if (rowNum % 2 == 0){
@@ -36,9 +39,9 @@ void setup() {
   }
   //	GIF EXPORT UTIL
   //	-----------------------
-  	// frameRate(12);
-  	// gifExport = new GifMaker(this, "TextureStudy02-pixel_manip_600x600.gif");
-  	// gifExport.setRepeat(0);
+  	frameRate(12);
+  	gifExport = new GifMaker(this, "TextureStudy02-single_pixel.gif");
+  	gifExport.setRepeat(0);
 
 }
 
@@ -56,22 +59,23 @@ void draw(){
   //GIF EXPORT UTIL
 	//-----------------------
 
-	// if(record){
-  //   int frameAdded = frameCount - frameStart;
-	// 	gifExport.setDelay(1);
-	// 	gifExport.addFrame();
-	// 	println("frame added: " + frameAdded);
-	// 	if(ghostMouse.x == ghostMouseStart &&  frameAdded > 10){
-	// 		gifExport.finish();
-	// 		record = false;
-	// 		println("\n\n\nrecord done!");
-	// 		exit();
-	// 	}
-	// }
+	if(record){
+    int frameAdded = frameCount - frameStart;
+		gifExport.setDelay(1);
+		gifExport.addFrame();
+		println("frame added: " + frameAdded);
+
+		if(ghostMouseMode == true && ghostMouse.x == ghostMouseStart && frameAdded > 10){
+			gifExport.finish();
+			record = false;
+			println("\n\n\nrecord done!");
+			exit();
+		}
+	}
 }
 
 void keyPressed(){
-  println(keyCode); //debug
+  //println(keyCode); //debug
   if(keyCode == 49){ //if '1' key is hit, toggle mouselessMode
     mouselessMode = (mouselessMode ? false : true);
     for(PtMod p : pts){
@@ -99,6 +103,19 @@ void keyPressed(){
   if(keyCode == 51){ //if '3' key is hit, reset
     for(PtMod p : pts){
       p.isDrawn = false;
+    }
+  }
+
+  if(keyCode == 52){ //if '4' key is hit, start record
+    //TRIGGER GIF EXPORT
+    if(record){ //if currently recording, stop record
+      gifExport.finish();
+      record = false;
+      println("\n\n\nrecord done!");
+      exit();
+    } else { //else start record
+      record = true;
+      frameStart = frameCount;
     }
   }
 }
