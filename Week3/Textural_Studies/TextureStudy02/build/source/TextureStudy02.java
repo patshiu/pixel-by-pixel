@@ -58,7 +58,7 @@ public void setup() {
   //	GIF EXPORT UTIL
   //	-----------------------
   	frameRate(12);
-  	gifExport = new GifMaker(this, "TextureStudy02-single_pixel.gif");
+  	gifExport = new GifMaker(this, "TextureStudy02-sin-formula.gif");
   	gifExport.setRepeat(0);
 
 }
@@ -114,9 +114,9 @@ public void keyPressed(){
     }
 
     //TRIGGER GIF EXPORT
-    // record = true;
-    // frameStart = frameCount;
-    // ghostMouseStart = ghostMouse.x;
+    record = true;
+    frameStart = frameCount;
+    ghostMouseStart = ghostMouse.x;
   }
   if(keyCode == 51){ //if '3' key is hit, reset
     for(PtMod p : pts){
@@ -251,9 +251,9 @@ class PtMod {
         float theta = atan2(y,x);         // Convert cartesian to polar
 
         // Compute 2D polar coordinate function
-        float val = sin(n*cos(r) + 10 * theta);           // Results in a value between -1 and 1
+        //float val = sin(n*cos(r) + 10 * theta);           // Results in a value between -1 and 1
         //float val = cos(r);                            // Another simple function
-        //float val = sin(theta);                        // Another simple function
+        float val = sin(theta);                        // Another simple function
         // Map resulting vale to grayscale
         float c =   (val + 1.0f) * 255.0f/2.0f;
         float dEdge = 1 - (sqrt(sq(abs(canvas.width*0.5f - i)) + sq(abs(canvas.height*0.5f - j)))/sqrt(sq(canvas.width*0.5f)+sq(canvas.height*0.5f))); //Distance from the edge of mod
@@ -263,7 +263,6 @@ class PtMod {
         } else {
           canvas.pixels[i+j*canvas.width] = color( c*dMouse, c*sq(1-dMouse), 255-c, sq(dEdge)*255);     //regular colors
         }
-
         y += dy;                // Increment y
       }
       x += dx;                  // Increment x

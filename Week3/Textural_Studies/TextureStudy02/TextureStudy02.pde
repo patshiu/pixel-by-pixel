@@ -40,7 +40,7 @@ void setup() {
   //	GIF EXPORT UTIL
   //	-----------------------
   	frameRate(12);
-  	gifExport = new GifMaker(this, "TextureStudy02-single_pixel.gif");
+  	gifExport = new GifMaker(this, "TextureStudy02-sin-formula.gif");
   	gifExport.setRepeat(0);
 
 }
@@ -96,9 +96,9 @@ void keyPressed(){
     }
 
     //TRIGGER GIF EXPORT
-    // record = true;
-    // frameStart = frameCount;
-    // ghostMouseStart = ghostMouse.x;
+    record = true;
+    frameStart = frameCount;
+    ghostMouseStart = ghostMouse.x;
   }
   if(keyCode == 51){ //if '3' key is hit, reset
     for(PtMod p : pts){

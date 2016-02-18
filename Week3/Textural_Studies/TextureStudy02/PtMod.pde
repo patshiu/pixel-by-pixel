@@ -113,7 +113,6 @@ class PtMod {
         } else {
           canvas.pixels[i+j*canvas.width] = color( c*dMouse, c*sq(1-dMouse), 255-c, sq(dEdge)*255);     //regular colors
         }
-
         y += dy;                // Increment y
       }
       x += dx;                  // Increment x
