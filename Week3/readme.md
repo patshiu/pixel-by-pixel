@@ -10,7 +10,7 @@ For this assignment, I prioritized the following specs:
 - modularized "super pixel" approach
 
 Here is a gif of the result:  
-![Gif of sketch](http://i.imgur.com/R7LSzaP.gif)  
+![Gif of sketch](http://i.imgur.com/1sa9VkS.gif)  
 
 Each "super pixel" is rendered as a `PGraphic`.  
 ![Gif of single pixel](http://i.imgur.com/P8oiS8m.gif)  
