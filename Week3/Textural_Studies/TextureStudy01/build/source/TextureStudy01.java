@@ -95,7 +95,8 @@ class PtMod {
     PGraphics canvas = createGraphics(60, 60);
     canvas.beginDraw();
     canvas.loadPixels();
-    float n = map(mouseX, 0, width, -6, 6);
+
+    float n = map(mouseX, 0, width, -6, 6); //Mapped to MouseX:Width for testing
     float w = 10.0f;         // 2D space width
     float h = 10.0f;         // 2D space height
     float dx = w / canvas.width;    // Increment x this amount per pixel
@@ -114,8 +115,8 @@ class PtMod {
         //float val = sin(theta);                        // Another simple function
         // Map resulting vale to grayscale
         float c =   (val + 1.0f) * 255.0f/2.0f;
-        float dEdge = 1 - (sqrt(sq(abs(canvas.width*0.5f - i)) + sq(abs(canvas.height*0.5f - j)))/sqrt(sq(canvas.width*0.5f)+sq(canvas.height*0.5f))); //Distance from the edge of mod 
-        canvas.pixels[i+j*canvas.width] = color(c, 255-c, c*0.5f, sq(dEdge)*255);     // Scale to between 0 and 255
+        float dEdge = 1 - (sqrt(sq(abs(canvas.width*0.5f - i)) + sq(abs(canvas.height*0.5f - j)))/sqrt(sq(canvas.width*0.5f)+sq(canvas.height*0.5f))); //Distance from the edge of mod
+        canvas.pixels[i+j*canvas.width] = color( c, sq(dEdge)*255);     // Scale to between 0 and 255
         y += dy;                // Increment y
       }
       x += dx;                  // Increment x

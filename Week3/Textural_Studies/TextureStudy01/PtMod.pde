@@ -81,7 +81,7 @@ class PtMod {
         // Map resulting vale to grayscale
         float c =   (val + 1.0) * 255.0/2.0;
         float dEdge = 1 - (sqrt(sq(abs(canvas.width*0.5 - i)) + sq(abs(canvas.height*0.5 - j)))/sqrt(sq(canvas.width*0.5)+sq(canvas.height*0.5))); //Distance from the edge of mod
-        canvas.pixels[i+j*canvas.width] = color(c, 255-c, c*0.5, sq(dEdge)*255);     // Scale to between 0 and 255
+        canvas.pixels[i+j*canvas.width] = color( c, sq(dEdge)*255);     // Scale to between 0 and 255
         y += dy;                // Increment y
       }
       x += dx;                  // Increment x
