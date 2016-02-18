@@ -1,4 +1,5 @@
-# Pixel x Pixel Week 3 Assignment :space_invader:
+#### Pixel x Pixel
+# Week 3 Assignment :space_invader:
 
 *Suggested exercise — Create a painting app, something that applies colors or paint or texture as the user moves the mouse or some other interaction.*
 
